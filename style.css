@@ -1,0 +1,280 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color:  rgb(51, 51, 51);
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+/*  Input Config */
+
+input, textarea {
+    display: block;
+    clear: both;
+    outline: none;
+    border: none;
+    background-color:rgb(247, 245, 244);
+    color: black ;
+}
+
+input{
+  padding-left: .5rem;
+}
+
+.panel {
+  display: flex;
+  height: calc(100vh - 2rem);
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+.panel__text {
+  width: 70%;
+  height: 100%;
+  outline: .05rem black solid;
+}
+
+.placeholder {
+  width: calc(100% - 8rem);
+  height: calc(100% - 8rem);
+  margin: 4rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+
+.resizer:after {
+  border-left: 1px solid rgb(238, 238, 238);
+  content: "";
+  display: flex;
+  position: relative;
+  width: .05rem;
+  height: 100%;
+}
+
+.panel__tools {
+  width: 30%;
+  height: 100%;
+  outline: .05rem black solid;
+}
+
+#close{
+  width: 100%;
+  height:2.5rem;
+  display:flex;
+  justify-content: right;
+}
+
+#close svg{
+fill: rgb(51, 51, 51);
+width: 2.5rem;
+height: 100%;
+padding: .5rem;
+}
+
+.entry {
+  width: 100%;
+  outline: .05rem black solid;
+}
+
+.entry__button {
+  height: 2.5rem;
+  padding-left: .5rem;
+  line-height: 2.5rem;
+}
+
+.text__entry {
+  display: none;
+}
+
+.title {
+  width: 100%;
+  height: 2.5rem;
+  outline: .05rem black solid;
+}
+
+.description {
+  width: 100%;
+  height: 5rem;
+  outline: .05rem black solid;
+  padding-left: .5rem;
+}
+
+.options {
+  width: 100%;
+  outline: .05rem black solid;
+}
+
+.options__button {
+  height: 2.5rem;
+  padding-left: .5rem;
+  line-height: 2.5rem;
+}
+
+.text__editor {
+  display: none;
+}
+
+.edit {
+  display: none;
+}
+.save__button {
+  height: 2.5rem;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  line-height: 2.5rem;
+  outline: .05rem black solid;
+}
+
+.h svg {
+width:50%;
+fill: rgb(51, 51, 51);
+}
+
+.text__editor {
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+.active__text__editor {
+  display: grid;
+}
+
+.button {
+  height: 3rem;
+  outline: .05rem black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mouse over effect */
+.entry__button:hover{
+  background:rgb(232, 232, 232);
+  cursor:pointer;
+}
+.options__button:hover{
+  background:rgb(232, 232, 232);
+  cursor:pointer;
+}
+.save__button:hover{
+  background:rgb(232, 232, 232);
+  cursor:pointer;
+}
+.button:hover{
+  background:rgb(232, 232, 232);
+  cursor:pointer;
+}
+
+@media screen and (max-width: 600px) {
+  /* .text__editor {
+    grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
+    grid-auto-rows: 1fr;
+  } */
+  #close{
+    display:none;
+  }
+
+  .panel {
+    flex-wrap: wrap-reverse;
+    height: auto;
+    margin: 0rem;
+  }
+
+  .placeholder {
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    margin: .5rem;
+  }
+
+  .resizer {
+    display: none;
+  }
+  .save__button {
+    display:none;
+  }
+
+  .panel__text {
+    width: 100%;
+    height: 45vh;
+  }
+
+  .panel__tools {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .edit {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    outline: .05rem black solid;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+
+}
